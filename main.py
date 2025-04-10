@@ -37,7 +37,7 @@ def adam_update(x, alpha, m, v, c, p):
 #end adam_update
 
 def newton_update(x, c, p):
-    pass
+    return x - np.linalg.inv(hess_f(x, c, p)) @ grad_f(x, c, p)
 #end newton_update
 
 def train(x_init, update, dataset, L):
